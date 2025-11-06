@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>site</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body class="bg-light">
+    <div class="container-fluid p-0 d-flex flex-column min-vh-100">
+        <header class="bg-primary text-white py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h1 class="h3 mb-1">Мой портфолио</h1>
+                        <p class="mb-0 opacity-75">Студент разработчик</p>
+                    </div>
+                    <div class="col-auto">
+                        <span class="badge bg-light text-primary">ЭФБО-04-24</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-light bg-dark">
+            <div class="container-fluid container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="../index.html">Главная</a>
+                        <a class="nav-link active" href="#">Проекты</a>
+                        <a class="nav-link" href="diary.html">Дневник</a>
+                        <a class="nav-link" href="contacts.html">Контакты</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="container my-4">
+            <section class="mb-5">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-card">
+                        <div class="btn-group mb-4" id="filters">
+                            <button class="btn btn-primary active" data-filter="all">Все</button>
+                            <button class="btn btn-outline-primary" data-filter="cs">CS 2</button>
+                            <button class="btn btn-outline-primary" data-filter="minecraft">ПО</button>
+                            <button class="btn btn-outline-primary" data-filter="htmlcss">HTML/CSS</button>
+                        </div>
+
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3" id="projects">
+                            <div class="col-md-4 project" data-tech="htmlcss website" data-title="Сайт"
+                                data-desc="Одностраничный личный сайт с адаптивной сеткой, формой контактов и плавной анимацией."
+                                data-images="../images/project1.jpg">
+                                <div class="card h-100">
+                                    <img src="../images/project1.jpg" class="card-img-top" alt="Личный сайт"
+                                        style="height:300px;object-fit:cover;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Сайт</h5>
+                                        <p class="card-text small text-muted">Свой сайт.</p>
+                                        <div class="mb-2">
+                                            <span class="badge bg-primary">HTML</span>
+                                            <span class="badge bg-primary">CSS</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 project" data-tech="cs" data-title="10 lvl Faceit"
+                                data-desc="Достижения в матчмейкинге и турнирах." data-images="../images/faceit2.jpg">
+                                <div class="card h-100">
+                                    <img src="../images/faceit.png" class="card-img-top" alt="faceit"
+                                        style="height:300px;object-fit:cover;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">1500 elo</h5>
+                                        <p class="card-text small text-muted">Чемпион по CS2 в своей комнате</p>
+                                        <div class="mb-2"><span class="badge bg-success">CS 2</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 project" data-tech="minecraft" data-title="Minecraft"
+                                data-desc="Базовая разработка программного обеспечения"
+                                data-images="../images/aura2.jpg">
+                                <div class="card h-100">
+                                    <img src="../images/aura.jpg" class="card-img-top" alt="minecraft"
+                                        style="height:300px;object-fit:cover;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">ПО</h5>
+                                        <p class="card-text small text-muted">Разработка базового прогарммного обеспечения</p>
+                                        <div class="mb-2"><span class="badge bg-info">Разработка ПО</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="bg-dark text-white py-4 mt-auto">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2025 Портфолио студента. Все права защищены.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
+                        <a href="#" class="text-white text-decoration-none">Политика конфиденциальности</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        (() => {
+            const filters = document.getElementById('filters');
+            const buttons = Array.from(filters.querySelectorAll('button[data-filter]'));
+            const cards = Array.from(document.querySelectorAll('#projects .project'));
+
+            function applyFilter(filter) {
+                const f = (filter || 'all').toLowerCase();
+
+                cards.forEach(card => {
+                    const tags = (card.dataset.tech || '')
+                        .toLowerCase()
+                        .split(/\s+/)
+                        .filter(Boolean);
+
+                    const show = f === 'all' || tags.includes(f);
+                    card.classList.toggle('d-none', !show);
+                });
+            }
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    buttons.forEach(b => b.classList.remove('active', 'btn-primary'));
+                    buttons.forEach(b => b.classList.add('btn-outline-primary'));
+                    btn.classList.add('active', 'btn-primary');
+                    btn.classList.remove('btn-outline-primary');
+
+                    applyFilter(btn.dataset.filter);
+                });
+            });
+
+            applyFilter('all');
+        })();
+    </script>
+
+    </div>
+
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="pmTitle">Заголовок проекта</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="pmImage" src="" alt="screenshot" class="img-fluid mb-3 rounded"
+                        style="max-height:420px; object-fit:cover;">
+                    <p id="pmDesc" class="mb-0"></p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        (() => {
+            const grid = document.getElementById('projects');
+            const modalEl = document.getElementById('projectModal');
+            const bsModal = new bootstrap.Modal(modalEl);
+
+            const $title = document.getElementById('pmTitle');
+            const $desc = document.getElementById('pmDesc');
+            const $img = document.getElementById('pmImage');
+
+            grid.addEventListener('click', (e) => {
+                const card = e.target.closest('.project');
+                if (!card) return;
+
+                // Текст
+                $title.textContent = card.dataset.title || 'Без названия';
+                $desc.textContent = card.dataset.desc || '';
+
+                // Одна картинка: data-image (или первый из data-images)
+                let src = card.dataset.image || '';
+                if (!src && card.dataset.images) {
+                    src = card.dataset.images.split('|').map(s => s.trim()).filter(Boolean)[0] || '';
+                }
+
+                if (src) {
+                    $img.src = src;
+                    $img.alt = (card.dataset.title || 'screenshot');
+                    $img.classList.remove('d-none');
+                } else {
+                    // если нет изображения — прячем <img>
+                    $img.src = '';
+                    $img.classList.add('d-none');
+                }
+
+                bsModal.show();
+            });
+        })();
+    </script>
+
+
+</body>
+
+</html>
